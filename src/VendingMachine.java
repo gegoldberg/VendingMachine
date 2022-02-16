@@ -17,7 +17,7 @@ public class VendingMachine {
 
 			Scanner input = new Scanner(System.in);
 
-			System.out.println("Make a selection:");
+			System.out.println("Please make a selection by inputting the corresponding number:");
 			System.out.println("1. Snickers: $1");
 			System.out.println("2. Doritos:  $1");
 			System.out.println("3. Reese's:  $1");
@@ -26,13 +26,22 @@ public class VendingMachine {
 			int userInput = input.nextInt();
 
 			if (userInput <= 5) {
-				System.out.println("item Cost: $1");
-				System.out.println("insert cash...");
+				System.out.println("Item Cost: $1");
+				System.out.println("Ony 1 Dollar Bills are accepted. Type the amount of cash you would like to insert...");
 				float cashIn = input.nextFloat();
-				float change = cashIn - 1;
-				System.out.println("Your change is: $" + change + " Enjoy!");
-				tryAgain = false;
-			} else {
+				
+				System.out.println("Are you sure you would like to complete this transaction? Type YES or NO.");
+				input.nextLine();
+				String decision = input.nextLine();
+				if (decision.equalsIgnoreCase("yes")) {
+					float change = cashIn - 1;
+					System.out.println("Your change is: $" + change + " Enjoy!");
+					tryAgain = false;
+				} else if (decision.equalsIgnoreCase("no")) {
+					System.out.println("Please make another selection.");
+				}
+			}
+			 else {
 				System.out.println("Invaild entry, try again.");
 			}
 		}
