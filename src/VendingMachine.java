@@ -27,7 +27,7 @@ public class VendingMachine {
 
 			if (userInput <= 5) {
 				System.out.println("Item Cost: $1");
-				System.out.println("Ony 1 Dollar Bills are accepted. Type the amount of cash you would like to insert...");
+				System.out.println("Enter cash amount...");
 				float cashIn = input.nextFloat();
 				
 				System.out.println("Are you sure you would like to complete this transaction? Type YES or NO.");
